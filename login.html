@@ -9,6 +9,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
   <link rel="stylesheet" href="login1.css">
+  <script src="./js/password.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -78,13 +79,13 @@
           <label for="username">Username</label>
           <input type="text" name="Username" id="username" placeholder="Username">
         </div>
-        <div class="textfield">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter Password">
-          <span id="login-hide">
-            <i class='icon bx bxs-hide' style="font-size: 27px;"></i>
-          </span>
-        </div>
+     <div class="textfield">
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" placeholder="Enter Password">
+  <span id="toggle-password" class="icon">
+    <i class="fa fa-eye" style="font-size: 27px;"></i>
+  </span>
+</div>
         <button class="btn-login" onclick="validateLogin()">Login</button>
         <h3>
           <center>OR</center>
@@ -128,18 +129,8 @@
     const auth = firebase.auth();
 
     // Password visibility toggle
-    const passwordInput = document.getElementById("password");
-    const hideLogo = document.getElementById("login-hide");
-    hideLogo.addEventListener("click", function () {
-      const passwordField = this.querySelector("i");
-      if (passwordInput.getAttribute("type") == "text") {
-        passwordInput.setAttribute("type", "password");
-        passwordField.classList.replace("bxs-show", "bxs-hide");
-      } else {
-        passwordInput.setAttribute("type", "text");
-        passwordField.classList.replace("bxs-hide", "bxs-show");
-      }
-    });
+
+
 
     // Close button redirect
     const closeBtn = document.querySelector('.close-btn');
